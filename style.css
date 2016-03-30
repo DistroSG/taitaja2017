@@ -1,12 +1,18 @@
 /*
- Theme Name:   Taitaja2017V1
+ Theme Name:   Taitaja2017
  Description:  Enlightenment Child Theme for skills competitions taitaja2017 in Helsinki
  Author:       Alexander Gradov
  Template:     enlightenment
  Version:      1.0.0
  License:      GNU General Public License v2 or later
  License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags: black, blue, gray, white, light, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fluid-layout, fixed-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+ Tags: black, blue, gray, white, light, one-column, two-columns, three-columns,
+       four-columns, left-sidebar, right-sidebar, fluid-layout, fixed-layout, 
+       responsive-layout, custom-background, custom-colors, custom-header,
+       custom-menu, editor-style, featured-image-header, featured-images,
+       flexible-header, full-width-template, microformats, post-formats,
+       sticky-post, theme-options, threaded-comments, translation-ready,
+       photoblogging
  Text Domain:  taitaja2017
 */
 
@@ -64,7 +70,7 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 /*For tablets devices*/
 @media (min-width: 768px){
-    
+
     .navbar a.navbar-brand {
         padding: 9px 15px;
         height: 50px;
@@ -78,6 +84,9 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 }
 @media (min-width: 995px){
+    .navbar {
+        min-height: 80px;
+    }
     .navbar-brand:after{
         background-size: 130px 80px;
         width: 130px;
@@ -89,6 +98,9 @@ input[type="text"]:focus, input[type="password"]:focus {
     .navbar a.navbar-brand {
         padding: 14px 15px;
         height: 60px;
+    }
+    .navbar-brand > .site-logo {
+        max-height: 80px;
     }
     .navbar-nav>li>div>a>span{
         padding: 30px 20px;

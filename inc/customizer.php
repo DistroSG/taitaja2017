@@ -19,5 +19,6 @@ function secondary_logo_customize_register($wp_customize) {
         'label' => __('Upload secondary logo', 'secondary logo'),
         'section' => 'title_tagline',
         'settings' => 'secondary_logo',
+        'priority' => 60,
     )));
 }
