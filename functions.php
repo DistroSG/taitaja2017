@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Description of functions
  *
@@ -81,6 +80,18 @@ function theme_enqueue_styles() {
             , array($parent_style));
 }
 
+//Adding to head new styles for custom figure image
+add_action('wp_head', 'figure_image_customize_css');
+
+//Adding a style that get figure image from figure image uploader.
+function figure_image_customize_css() {
+    ?>
+    <style type="text/css" id="custom-figure-image">
+        .navbar-brand:after{background-image: url(' <?php echo get_theme_mod('figure_image'); ?>'); }
+    </style>
+    <?php
+}
+
 /*
  * Add to nav menu new item which include search box.
  * 
@@ -129,5 +140,4 @@ function add_secondary_logo_to_menu($items, $args) {
     }
     return $items;
 }
-
 ?>
