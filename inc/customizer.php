@@ -7,6 +7,8 @@
  * 
  * @author Alexander Gradov
  */
+/* Site identity */
+
 /** Add figure image uploader to customize menu */
 add_action('customize_register', 'figure_customize_register');
 
@@ -35,5 +37,35 @@ function secondary_logo_customize_register($wp_customize) {
         'section' => 'title_tagline',
         'settings' => 'secondary_logo',
         'priority' => 70,
+    )));
+}
+
+/* Colors */
+
+/** Add links color picker to customize menu */
+add_action('customize_register', 'links_color_customize_register');
+
+function links_color_customize_register($wp_customize) {
+    // Add setting for links color
+    $wp_customize->add_setting('link_color');
+    // Add control for links color picker 
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'link_color', array(
+        'label' => __('Link Color', 'link_color'),
+        'section' => 'colors',
+        'settings' => 'link_color',
+    )));
+}
+
+/** Add hover and focus links color picker to customize menu */
+add_action('customize_register', 'links_hover_focus_color_customize_register');
+
+function links_hover_focus_color_customize_register($wp_customize) {
+    // Add setting for hover and focus links color
+    $wp_customize->add_setting('hover_focus_link_color');
+    // Add control for hover and focus links color picker 
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'hover_focus_link_color', array(
+        'label' => __('Hover And Focus Link Color', 'hover_focus_link_color'),
+        'section' => 'colors',
+        'settings' => 'hover_focus_link_color',
     )));
 }

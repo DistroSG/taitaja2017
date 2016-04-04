@@ -16,14 +16,6 @@
  Text Domain:  taitaja2017
 */
 
-/*change link color*/
-a {
-    color: #F18621;
-}
-/*change hover and focus link color*/
-a:hover, a:focus {
-    color: #C05500;
-}
 
 /*change color for focus color for input fields*/
 input[type="text"]:focus, input[type="password"]:focus {
@@ -78,6 +70,11 @@ input[type="text"]:focus, input[type="password"]:focus {
 
 /*For tablets devices*/
 @media (min-width: 768px){
+
+    /*Make logo bigger*/
+    .navbar-brand > .site-logo {
+        max-height: 42px;
+    }
     /*Make triangle bigger*/
     .navbar-brand:after {
         background-size: 110px 60px;    

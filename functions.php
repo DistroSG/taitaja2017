@@ -8,6 +8,8 @@
  */
 //Add customizer.php functionality to the child theme
 require get_stylesheet_directory() . '/inc/customizer.php';
+//Add alpha.php functionality to the child theme
+require get_stylesheet_directory() . '/lib/alphaColorPicker.php';
 
 
 /*
@@ -58,7 +60,7 @@ function theme_enqueue_styles() {
      */
     // Bootstrap with new breakpoint.
     wp_enqueue_style($bootstrap, get_stylesheet_directory_uri()
-            . '/bootstrap.min.css');
+            . '/lib/css/bootstrap.min.css');
     /*
      * Parent style.css with using get_template_directory_uri() to get parent 
      * theme's main directory URI.
@@ -80,14 +82,37 @@ function theme_enqueue_styles() {
             , array($parent_style));
 }
 
+//Removing unnecessary options from customizer menu
+add_action('customizer_register', 'remove_unnecessary_options_from_customizer');
+
+//Removing background, header image and static front page options from customizer menu
+function remove_unnecessary_options_from_customizer($wp_customize) {
+    remove_custom_background();
+    remove_custom_image_header();
+    $wp_customize->remove_section('static_front_page');
+}
+
 //Adding to head new styles for custom figure image
-add_action('wp_head', 'figure_image_customize_css');
+add_action('wp_head', 'figure_image_customizer_css');
 
 //Adding a style that get figure image from figure image uploader.
-function figure_image_customize_css() {
+function figure_image_customizer_css() {
     ?>
     <style type="text/css" id="custom-figure-image">
         .navbar-brand:after{background-image: url(' <?php echo get_theme_mod('figure_image'); ?>'); }
+    </style>
+    <?php
+}
+
+//Adding to head new styles for custom colors
+add_action('wp_head', 'colors_customizer_css');
+
+//Adding a style that get colors from colors picker.
+function colors_customizer_css() {
+    ?>
+    <style type="text/css" id="custom-colors">
+        a {  color: <?php echo get_theme_mod('link_color'); ?>;}
+        a:hover, a:focus {color: <?php echo get_theme_mod('hover_focus_link_color'); ?>;}
     </style>
     <?php
 }
@@ -140,4 +165,3 @@ function add_secondary_logo_to_menu($items, $args) {
     }
     return $items;
 }
-?>
