@@ -8,9 +8,6 @@
  */
 //Add customizer.php functionality to the child theme
 require get_stylesheet_directory() . '/inc/customizer.php';
-//Add alpha.php functionality to the child theme
-require get_stylesheet_directory() . '/lib/alphaColorPicker.php';
-
 
 /*
  * Remove unnecessary styles.
@@ -82,10 +79,10 @@ function theme_enqueue_styles() {
             , array($parent_style));
 }
 
-//Removing unnecessary options from customizer menu
-add_action('customizer_register', 'remove_unnecessary_options_from_customizer');
+//Removing unnecessary options from customizer
+add_action('customize_register', 'remove_unnecessary_options_from_customizer');
 
-//Removing background, header image and static front page options from customizer menu
+//Removing background, header image and static front page options from customizer
 function remove_unnecessary_options_from_customizer($wp_customize) {
     remove_custom_background();
     remove_custom_image_header();
@@ -93,10 +90,10 @@ function remove_unnecessary_options_from_customizer($wp_customize) {
 }
 
 //Adding to head new styles for custom figure image
-add_action('wp_head', 'figure_image_customizer_css');
+add_action('wp_head', 'figure_image_customize_css');
 
 //Adding a style that get figure image from figure image uploader.
-function figure_image_customizer_css() {
+function figure_image_customize_css() {
     ?>
     <style type="text/css" id="custom-figure-image">
         .navbar-brand:after{background-image: url(' <?php echo get_theme_mod('figure_image'); ?>'); }
@@ -105,14 +102,33 @@ function figure_image_customizer_css() {
 }
 
 //Adding to head new styles for custom colors
-add_action('wp_head', 'colors_customizer_css');
+add_action('wp_head', 'colors_customize_css');
 
 //Adding a style that get colors from colors picker.
-function colors_customizer_css() {
+function colors_customize_css() {
     ?>
     <style type="text/css" id="custom-colors">
         a {  color: <?php echo get_theme_mod('link_color'); ?>;}
         a:hover, a:focus {color: <?php echo get_theme_mod('hover_focus_link_color'); ?>;}
+        input[type="text"]:focus, input[type="password"]:focus {
+            border-color: <?php echo get_theme_mod('input_field_border_focus_color'); ?>;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px <?php echo get_theme_mod('input_field_border_shadow_color'); ?>;
+        }
+        .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > 
+        .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+            color: <?php echo get_theme_mod('navbar_active_link_color'); ?>;
+        }
+        .navbar .nav > li > a:hover, .navbar .nav li.dropdown.open > .dropdown-toggle, 
+        .navbar .nav li.dropdown.open > .dropdown-toggle .menu-item-description, 
+        .navbar .nav li.dropdown:target > .dropdown-toggle {
+            color: <?php echo get_theme_mod('navbar_hover_and_focus_link_color'); ?>;
+        }
+        #toggle-search-form{
+            color: <?php echo get_theme_mod('search_icon_color'); ?>; 
+        }
+        #toggle-search-form:hover, #toggle-search-form:focus {
+            color: <?php echo get_theme_mod('search_icon_hover_and_focus_color'); ?>;
+        }
     </style>
     <?php
 }

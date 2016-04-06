@@ -36,35 +36,6 @@ function pluto_add_customizer_custom_controls($wp_customize) {
 
 add_action('customize_register', 'pluto_add_customizer_custom_controls');
 
-function pluto_register_customizer_options($wp_customize) {
-    /* -----------------------------------------------------------*
-     * Defining our own section called "It's Alpha time"
-     * ----------------------------------------------------------- */
-    $wp_customize->add_section(
-            'alpha_color_category', array(
-        'title' => 'It\'s Alpha time',
-        'priority' => 202
-            )
-    );
-    /* -----------------------------------------------------------*
-     * Hook our control into the section above
-     * ----------------------------------------------------------- */
-    $wp_customize->add_setting(
-            'pluto_color_control_one'
-    );
-    $wp_customize->add_control(
-            new Pluto_Customize_Alpha_Color_Control(
-            $wp_customize, 'pluto_color_control_one', array(
-        'label' => 'Alpha Color',
-        'palette' => true,
-        'section' => 'alpha_color_category'
-            )
-            )
-    );
-}
-
-add_action('customize_register', 'pluto_register_customizer_options');
-
 function pluto_enqueue_customizer_admin_scripts() {
     wp_register_script('customizer-admin-js', get_stylesheet_directory_uri() . '/lib/js/admin/alphaColorPicker.js', array('jquery'), NULL, true);
     wp_enqueue_script('customizer-admin-js');
