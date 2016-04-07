@@ -69,33 +69,6 @@ function links_hover_focus_color_customizer_register($wp_customize) {
     )));
 }
 
-/** Add input field border focus color picker to customizer */
-add_action('customize_register', 'input_field_border_focus_color_customizer_register');
-
-function input_field_border_focus_color_customizer_register($wp_customize) {
-    // Add setting for input field border focus color
-    $wp_customize->add_setting('input_field_border_focus_color');
-    // Add control for input field border focus color picker 
-    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'input_field_border_focus_color', array(
-        'label' => __('Input Field Border Focus Color'),
-        'section' => 'colors',
-    )));
-}
-
-/** Add input field border shadow color picker to customizer */
-add_action('customize_register', 'input_field_border_shadow_color_customizer_register');
-
-function input_field_border_shadow_color_customizer_register($wp_customize) {
-    // Add setting for input field shadow shadow color
-    $wp_customize->add_setting('input_field_border_shadow_color');
-    // Add control for input field shadow color picker 
-    $wp_customize->add_control(new Pluto_Customize_Alpha_Color_Control($wp_customize, 'input_field_border_shadow_color', array(
-        'label' => __('Input Field Shadow Focus Color'),
-        'section' => 'colors',
-        'palette' => true,
-    )));
-}
-
 /** Add navbar active link color picker to customizer */
 add_action('customize_register', 'navbar_active_link_color_customizer_register');
 
@@ -145,5 +118,32 @@ function search_icon_hover_and_focus_color_customizer_register($wp_customize) {
     $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'search_icon_hover_and_focus_color', array(
         'label' => __('Search Icon Hover And Focus Color'),
         'section' => 'colors',
+    )));
+}
+
+/** Add input field border focus color picker to customizer */
+add_action('customize_register', 'input_field_border_focus_color_customizer_register');
+
+function input_field_border_focus_color_customizer_register($wp_customize) {
+    // Add setting for input field border focus color
+    $wp_customize->add_setting('input_field_border_focus_color');
+    // Add control for input field border focus color picker 
+    $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'input_field_border_focus_color', array(
+        'label' => __('Input Field Border Focus Color'),
+        'section' => 'colors',
+    )));
+}
+
+/** Add input field border shadow color picker to customizer */
+add_action('customize_register', 'input_field_border_shadow_color_customizer_register');
+
+function input_field_border_shadow_color_customizer_register($wp_customize) {
+    // Add setting for input field shadow shadow color
+    $wp_customize->add_setting('input_field_border_shadow_color');
+    // Add control for input field shadow color picker 
+    $wp_customize->add_control(new Pluto_Customize_Alpha_Color_Control($wp_customize, 'input_field_border_shadow_color', array(
+        'label' => __('Input Field Shadow Focus Color'),
+        'section' => 'colors',
+        'palette' => true,
     )));
 }
