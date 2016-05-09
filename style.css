@@ -15,41 +15,273 @@
        photoblogging
  Text Domain:  taitaja2017
 */
-
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-family: 'Open Sans Condensed';
+}
+/*Color of links*/
+a {  
+    color:#3399CC;
+    font-family: 'Open Sans Condensed';
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/*Color of hover and focus links*/
+a:hover, 
+a:focus {
+    color: #3399CC;
+}
+/*input fields focus colors */
+input[type="text"]:focus, 
+input[type="password"]:focus {
+    border-color: #3399CC;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(51,153,204,0.6);
+}
+/*Set page content lower*/
+.navbar-offset {
+    margin-top: 80px;
+}
+/*Set header´s box shadow off */
+.navbar-default {
+    box-shadow: none;
+}
+/*Color of active link in navbar menu*/
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #3399CC;
+}
+/*Color of hover and focus links in navbar menu*/
+.navbar .nav > li > a:hover,
+.navbar .nav li.dropdown.open > .dropdown-toggle, 
+.navbar .nav li.dropdown.open > .dropdown-toggle .menu-item-description, 
+.navbar .nav li.dropdown:target > .dropdown-toggle {
+    color:#3399CC;
+}
+/* Setup upbar´s appearance  */
+#upbar{
+    background-color: black;
+    height: 32px;
+    padding: 5px 0;
+}
+/*Describing behavior of language switcher*/ 
+.widget_mslswidget{
+    float: right;
+}
+/*Describing behavior of language switcher*/ 
+.widget_mslswidget a{
+    margin-right: 20px;
+    color: white;
+}
+/*Hover and focus color of language switcher */ 
+.widget_mslswidget a:hover,
+.widget_mslswidget a:focus{
+    color: #3399CC;
+}
+/*Change color of search icon to white*/
+#toggle-search-form{
+    color: white;
+    transition: color .25s ease, margin .25s ease;
+}
+/*Color of hover and focus search icon*/
+#toggle-search-form:hover,
+#toggle-search-form:focus {
+    color:#3399CC;
+}
 /*
-*Add after logo a triangle
-*background-size and width and height should be identical
-*/
+    *Add after logo a triangle
+    *background-size and width and height should be identical
+    */
 .navbar-brand:after{
     content: "";
-    background-size: 105px 55px;
+    background-image: url('http://taitaja2017.fi/wp-content/themes/taitaja2017/img/triangle-blue.png');
+    background-size: 100px 50px;
     background-repeat: no-repeat;
     display: inline-block;
-    width: 105px;
-    height: 55px;
+    width: 100px;
+    height: 50px;
     position: relative;
-    bottom: 14px;
+    bottom: 9px;
 }
-
-/*Align Search button on the mobile device*/
-.navbar-nav>li>div>a>span{
-    padding: 10px 15px;  
-}
-
-/* Search icon color orange */
-/*#toggle-search-form:hover, #toggle-search-form:focus {
-    color: #C05500;
-
-}*/
 /*Describing behavior of secondary-logo*/ 
 #secondary-logo{
     float: right;
     max-height: 80px;
 }
+/*Remove borders from menu button*/
+.navbar-default .navbar-toggle {
+    border: none;
+}
+/*Remove hover and focus effect from menu button*/
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color: #ffffff;
+}
+/*Change menu button's color to black*/
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: black; 
+}
+/*Position of menu button*/
+.navbar-toggle{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+/*Change menu button's size*/
+.navbar-toggle .icon-bar {
+    width: 33px;
+    height: 4px;
+}
+/*Distance between icon bars */
+.navbar-toggle .icon-bar+.icon-bar {
+    margin-top: 5px;
+}
+.menu-shortcuts-container{
+    display: none;
+}
+/*Big logog size and place*/
+#big-logo{
+    margin: 0 auto;
+    max-width: 600px;
+}
+/*slider background black*/
+.background-parallax:after {
+    background-color: black;
+}
+/*Slider content position*/
+.sidebar-full-screen .slide-container{
+    padding: 0;
+}
+/*The appearance of slidebar´s links*/
+.slide-container a img {
+    padding: 0;
+}
+/*Color of news block*/
+#recent-2-posts{
+    background-color:#1FB8FA;
+}
+/*Thumbnail´s size and position*/
+#recent-2-posts h2{
+    border-bottom: 1px solid white;
+    color: white;
+    font-size: 22px;
+    padding: 10px 0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+/*Thumbnail´s size and position*/
+#recent-2-posts img{
+    display: inline;
+    float: left;
+    max-width: 100px;
+    clear: both;
+    margin-bottom: 15px;
+    margin-right: 15px;
+}
+#recent-2-posts .content{
+    clear: both;
+}
+/*New´s titel size and color*/
+#recent-2-posts h3{
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin-top: 0;
+}
+/*New´s excerpt color*/
+#recent-2-posts p{
+    color: white;
+}
+/*New´s read more size and color*/
+#recent-2-posts a{
+    color: white;
+    font-weight: bold;
+}
+.single .site-content,
+.page .site-content {
+    margin-top: 0;
+}
+.design-full-screen .content-sidebar-wrapper {
+    margin: 0;
+}
+.design-full-screen.page.layout-full-width .content-area > :last-child {
+    padding: 0;
+}
+.design-full-screen.page.layout-full-width .hentry {
+    padding: 0;
+}
+#sidebar-footer h3{
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+
+}
+.custom-query-gallery .custom-entry-lead img {
+    max-width: 100px; 
+}
+#sidebar-footer-secondary{
+    background-color: black;
+    text-align: center;
+}
+#wysija-2 .widget-title{
+    color: #1FB8FA;
+    display: inline-block;
+    font-family: 'Open Sans';
+}
+.widget_wysija_cont,
+#form-wysija-2,
+.wysija-paragraph,
+#msg-form-wysija-2{
+    display: inline-block;
+}
+.widget_wysija input[name="wysija[user][email]"] {
+    margin: 0 5px;
+}
+.widget_wysija_cont .wysija-submit{
+    background-color: #1FB8FA;
+    color: white;
+    display: inline-block;
+    margin: 0;
+}
+footer{
+    background-color: black;
+}
+#footer-logo{
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+p.contact-information{
+    color: #99C1DA;
+}
+address{
+    color: white;
+}
+ul.social-buttons{
+    list-style-type: none;
+    margin-right: 45px;
+}
+ul.social-buttons li{
+    display:inline-block;
+
+
+}
+ul.social-buttons li img{
+    max-height: 39px;
+}
 
 /*For tablets devices*/
 @media (min-width: 768px){
-
+    /*Set page content lower*/
+    .navbar-offset {
+        margin-top: 150px;
+    }
+    /*Position of logo*/
+    .navbar a.navbar-brand {
+        padding: 7px 15px;
+        height: 60px;
+    }
     /*Make logo bigger*/
     .navbar-brand > .site-logo {
         max-height: 42px;
@@ -59,41 +291,121 @@
         background-size: 110px 60px;    
         width: 110px;
         height: 60px;
+        bottom: 7px;
+    }
+    /*Position of menu button*/
+    .navbar-toggle{
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+    /*Change menu button's size*/
+    .navbar-toggle .icon-bar {
+        width: 39px;
+        height: 5px;
+    }
+    /*Distance between icon bars */
+    .navbar-toggle .icon-bar+.icon-bar {
+        margin-top: 6px;
+    }
+
+    /*Distance between elements in navbar menu*/
+    .navbar .nav > li > a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    /*Remove unnecessary margin*/
+    .navbar-nav.navbar-right:last-child {
+        margin-right: 0px;
+    }
+    /* Setup shortcuts appearance  */
+    .menu-shortcuts-container{
+        background-color: black;
+        display: block;
+        height: 62px;
+        text-align: center;
 
     }
-    /*Make content closer to navbar*/
-    .navbar-offset {
-        margin-top: 50px;
+    /*Remove list decoration and centr aling the list */
+    ul#menu-shortcuts{
+        list-style-type: none;
+        padding: 20px 0;
+
     }
-    /*Remove margin from last elment of navbar list*/
-    .navbar-nav.navbar-right:last-child {
+    /*All list items inline and add more space between items */
+    #menu-shortcuts li{
+        display: inline;
+        margin-right: 10px;
+
+    }
+    /*Set up list´s items appearance*/
+    #menu-shortcuts li a{
+        border-radius: 5px;
+        border: 1px solid white;
+        color: white;
+        padding: 5px 10px;
+    }
+    /*Set up list´s items hover appearance*/
+    #menu-shortcuts li.active a, #menu-shortcuts li a:hover{
+        background-color:#3399cc;
+    }
+    /*Thumbnail´s size*/
+    #recent-2-posts img{
+        max-width: 170px;
+    }
+    .custom-query-gallery .custom-entry-lead img {
+        max-width: 152px; 
+    }
+
+    ul.social-buttons{
         margin-right: 0;
     }
-
 }
 /*For laptops*/
 @media (min-width: 995px){
-    /* Navbar links at the bottom*/
-    .navbar .nav > li > a {
-        padding-top: 45px;
+    /*Set page content lower*/
+    .navbar-offset {
+        margin-top: 165px;
+    }
+    /* Navbar size*/
+    .container>.navbar-header,
+    .container-fluid>.navbar-header,
+    .container>.navbar-collapse, 
+    .container-fluid>.navbar-collapse {
+        min-height: 80px;
+    }
+    /*Position of logo*/
+    .navbar a.navbar-brand {
+        padding: 10px 15px;
     }
     /*Make triangle more bigger*/
     .navbar-brand:after{
         background-size: 130px 80px;
         width: 130px;
         height: 80px;
+        bottom: 10px;
     }
-
     /*Size of logo*/
     .navbar-brand > .site-logo {
         max-height: 80px;
     }
-    /* Search icon at the same line as navbar links */
-    .navbar-nav>li>div>a>span{
-        padding-top: 48px;
-        padding-right: 30px;
-        padding-bottom: 0;
-        padding-left: 0;
-
+    /*Change menu button's size*/
+    .navbar-toggle .icon-bar {
+        width: 42px;
+    }
+    /*Position of menu button*/
+    .navbar-toggle{
+        margin-top: 17px;
+        margin-bottom: 17px;
+    }
+    /*Distance between elements in navbar menu*/
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .site-footer{
+        text-align: left;
+    }
+    p.contact-information{
+        text-align: left;
     }
 }
